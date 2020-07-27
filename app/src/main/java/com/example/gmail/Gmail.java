@@ -1,6 +1,7 @@
 package com.example.gmail;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,7 @@ public class Gmail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gmail);
+
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         recyclerView = (RecyclerView)findViewById(R.id.myRecyclerView);
@@ -98,12 +100,4 @@ public class Gmail extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
-    /*private ArrayList<ModelActivity> GetListItems() {
-        final ArrayList<ModelActivity> ListItems = new ArrayList<>();
-            ListItems.add(new ModelActivity("M", "HOLA", "HP","SI","FUNCIONA"));
-        return ListItems;
-    }*/
-
-
 }
