@@ -69,12 +69,7 @@ public class Gmail extends AppCompatActivity {
 
                                 JSONObject o = jsonArray.getJSONObject(i);
                                 ModelActivity modelActivity = new ModelActivity(
-                                        /*o.getString("head").substring(0,1),
-                                        o.getString("head"),
-                                        o.getString("subject"),
-                                        o.getString("description"),
-                                        o.getString("date")*/
-                                           o.getString("from").substring(0,1),
+                                        o.getString("from").substring(0,1),
                                         o.getString("from"),
                                         o.getString("subject"),
                                         o.getString("message"),

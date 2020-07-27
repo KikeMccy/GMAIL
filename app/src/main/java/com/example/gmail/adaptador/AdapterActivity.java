@@ -37,16 +37,17 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
         ModelActivity modelActivity = modelActivityList.get(position);
 
         //This will randomly color all circle
-        /*Random mRandom = new Random();
+        Random mRandom = new Random();
         int color = Color.argb(255, mRandom.nextInt(256), mRandom.nextInt(256), mRandom.nextInt(256));
-        ((ColorDrawable) holder.textCircle.getBackground()).setColor(color);
+      //  ((ColorDrawable) holder.textCircle.getBackground()).setColor(color);
 
-        String currentUrl = modelActivity.getCircleText();
+        holder.textCircle.setBackgroundColor(color);
+        /*String currentUrl = modelActivity.getCircleText();
         Glide.with(context)
                 .load(currentUrl)
                 .into(Holder.ivFoto);*/
 
-        //holder.textCircle.setText(modelActivity.getCircleText());
+        holder.textCircle.setText(modelActivity.getCircleText());
         holder.textHead.setText(modelActivity.getHeadText());
         holder.textSub.setText(modelActivity.getSubText());
         holder.textDes.setText(modelActivity.getDesText());
@@ -61,27 +62,16 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView textHead,textSub,textDes,textDate;
-        ImageView textCircle;
+        TextView textCircle;
         public ViewHolder(View itemView) {
             super(itemView);
 
             //textCircle = (ImageView) itemView.findViewById(R.id.circleText);
-            textHead = (TextView)itemView.findViewById(R.id.headText);
-            textSub = (TextView)itemView.findViewById(R.id.subText);
-            textDes = (TextView)itemView.findViewById(R.id.desText);
-            textDate = (TextView)itemView.findViewById(R.id.dateText);
-        }
-    }
-   /* public static class Holder extends RecyclerView.ViewHolder{
-        public TextView textCircle,textHead,textSub,textDes,textDate;
-
-        public Holder(@NonNull View itemView) {
-            super(itemView);
             textCircle = (TextView)itemView.findViewById(R.id.circleText);
             textHead = (TextView)itemView.findViewById(R.id.headText);
             textSub = (TextView)itemView.findViewById(R.id.subText);
             textDes = (TextView)itemView.findViewById(R.id.desText);
             textDate = (TextView)itemView.findViewById(R.id.dateText);
         }
-    }*/
+    }
 }
