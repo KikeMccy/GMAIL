@@ -3,6 +3,15 @@ package com.example.gmail.modelo;
 public class ModelActivity {
     private String circleText,headText,subText,desText,dateText;
 
+    /*private Integer id;
+    private Boolean isImportant;
+    private String picture;
+    private String from;
+    private String subject;
+    private String message;
+    private String timestamp;
+    private Boolean isRead;*/
+
     public ModelActivity(String circleText, String headText, String subText, String desText, String dateText) {
         this.circleText = circleText;
         this.headText = headText;

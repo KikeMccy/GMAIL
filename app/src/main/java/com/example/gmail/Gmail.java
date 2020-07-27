@@ -1,14 +1,13 @@
 package com.example.gmail;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,11 +26,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gmail extends AppCompatActivity {
-    private static final String URL = "http://androidcodefinder.com/RecyclerViewJson.json";
+    private static final String URL = "https://api.androidhive.info/json/inbox.json";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<ModelActivity> modelActivityList;
     private ProgressBar progressBar;
+    private RecyclerView.LayoutManager manager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +47,12 @@ public class Gmail extends AppCompatActivity {
         modelActivityList = new ArrayList<>();
 
         loadData();
+
+
     }
 
     private void loadData() {
+
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 URL,
                 new Response.Listener<String>() {
@@ -64,11 +69,16 @@ public class Gmail extends AppCompatActivity {
 
                                 JSONObject o = jsonArray.getJSONObject(i);
                                 ModelActivity modelActivity = new ModelActivity(
-                                        o.getString("head").substring(0,1),
+                                        /*o.getString("head").substring(0,1),
                                         o.getString("head"),
                                         o.getString("subject"),
                                         o.getString("description"),
-                                        o.getString("date")
+                                        o.getString("date")*/
+                                           o.getString("from").substring(0,1),
+                                        o.getString("from"),
+                                        o.getString("subject"),
+                                        o.getString("message"),
+                                        o.getString("timestamp")
                                 );
                                 modelActivityList.add(modelActivity);
                             }
@@ -93,5 +103,12 @@ public class Gmail extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
+    /*private ArrayList<ModelActivity> GetListItems() {
+        final ArrayList<ModelActivity> ListItems = new ArrayList<>();
+            ListItems.add(new ModelActivity("M", "HOLA", "HP","SI","FUNCIONA"));
+        return ListItems;
+    }*/
+
 
 }
