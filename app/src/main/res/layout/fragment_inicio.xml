@@ -6,13 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".fragments.InicioFragment">
 
+    <LinearLayout
+        android:id="@+id/inicio"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.70"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Seleccionar Interfaz"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:paddingTop="12dp"/>
+    </LinearLayout>
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/idGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="4dp"
         app:columnCount="1"
-        app:rowCount="1">
+        app:rowCount="1"
+        android:layout_below="@+id/inicio">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardGmail"

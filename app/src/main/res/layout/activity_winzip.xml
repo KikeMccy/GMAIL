@@ -1,9 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Winzip">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- ENCABEZADO -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="#1E85D8"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <!-- IMAGEN RETROCEDER -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.10"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:padding="10dp">¬
+            <TextView
+                android:id="@+id/circleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="28dp" />
+        </LinearLayout>
+        <!-- TEXTO BUSCANDO -->
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.70"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="SD Card"
+                android:textAlignment="center"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <!-- IMAGEN AGREGAR -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.10"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:padding="10dp">
+        <TextView
+            android:id="@+id/agregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_add_24"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="28dp" />
+        </LinearLayout>
+
+        <!-- IMAGEN  ABRIR MENU -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.10"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/circleTex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_menu_open_24"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="28dp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- LISTA DE DATOS -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecyclerViewWinzip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

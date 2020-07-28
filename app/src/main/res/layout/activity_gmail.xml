@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:orientation="vertical">
 
+    <!-- BARRA CARGANDO -->
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
+        android:layout_marginTop="-6dp"
         android:layout_marginBottom="-6dp"
-        android:layout_marginTop="-6dp"/>
+        android:indeterminate="true" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <!-- ENCABEZADO -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/myRecyclerView">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="41dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <!-- IMAGEN MENU -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.10"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:padding="10dp">¬
+
+            <TextView
+                android:id="@+id/circleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_dehaze_24"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="28dp" />
+        </LinearLayout>
+        <!-- TEXTO BUSCANDO -->
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.70"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" Buscar en el correo electrónico"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <!-- IMAGEN USUARIO -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.20"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+            <TextView
+                android:id="@+id/circleUsuario"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_shape"
+                android:text="K"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- LISTA DE DATOS -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

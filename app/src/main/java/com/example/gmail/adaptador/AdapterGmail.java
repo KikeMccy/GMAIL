@@ -2,12 +2,9 @@ package com.example.gmail.adaptador;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,18 +15,18 @@ import com.example.gmail.modelo.ModelActivity;
 import java.util.List;
 import java.util.Random;
 
-public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHolder>{
+public class AdapterGmail extends RecyclerView.Adapter<AdapterGmail.ViewHolder>{
     private List<ModelActivity> modelActivityList ;
     private Context context;
-    public AdapterActivity(List<ModelActivity> modelActivityList, Context context) {
+    public AdapterGmail(List<ModelActivity> modelActivityList, Context context) {
         this.modelActivityList = modelActivityList;
         this.context = context;
     }
 
     @Override
-    public AdapterActivity.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdapterGmail.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_view,parent,false);
+                .inflate(R.layout.list_view_gmail,parent,false);
         return new ViewHolder(v);
     }
     @Override
@@ -65,7 +62,6 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
         TextView textCircle;
         public ViewHolder(View itemView) {
             super(itemView);
-
             //textCircle = (ImageView) itemView.findViewById(R.id.circleText);
             textCircle = (TextView)itemView.findViewById(R.id.circleText);
             textHead = (TextView)itemView.findViewById(R.id.headText);

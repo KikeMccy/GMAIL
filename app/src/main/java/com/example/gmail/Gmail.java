@@ -1,14 +1,12 @@
 package com.example.gmail;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.gmail.adaptador.AdapterActivity;
+import com.example.gmail.adaptador.AdapterGmail;
 import com.example.gmail.modelo.ModelActivity;
 
 import org.json.JSONArray;
@@ -47,10 +45,7 @@ public class Gmail extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         modelActivityList = new ArrayList<>();
-
         loadData();
-
-
     }
 
     private void loadData() {
@@ -80,7 +75,7 @@ public class Gmail extends AppCompatActivity {
                                 modelActivityList.add(modelActivity);
                             }
 
-                            adapter = new AdapterActivity(modelActivityList, getApplicationContext());
+                            adapter = new AdapterGmail(modelActivityList, getApplicationContext());
                             recyclerView.setAdapter(adapter);
 
 
